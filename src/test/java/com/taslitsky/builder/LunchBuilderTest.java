@@ -8,11 +8,11 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class LunchBuilderTest {
-  private LunchBuilder lunchBuilder = new LunchBuilder();
+  private LunchBuilder underTest = new LunchBuilder();
 
   @Test
   void LunchNotNullTest() {
-    Assertions.assertNotNull(lunchBuilder.build());
+    Assertions.assertNotNull(underTest.build());
   }
 
   @Test
@@ -23,7 +23,7 @@ class LunchBuilderTest {
     expected.setPrice(15.6F);
 
     // WHEN
-    Lunch actual = lunchBuilder
+    Lunch actual = underTest
         .course(ItalianCourseItem.ITALIAN_CHICKEN)
         .build();
 
@@ -39,7 +39,7 @@ class LunchBuilderTest {
     expected.setPrice(5F);
 
     // WHEN
-    Lunch actual = lunchBuilder
+    Lunch actual = underTest
         .dessert(ItalianDessertItem.ITALIAN_CAKE)
         .build();
 
@@ -53,7 +53,7 @@ class LunchBuilderTest {
     Lunch expected = new Lunch();
 
     // WHEN
-    Lunch actual = lunchBuilder.build();
+    Lunch actual = underTest.build();
 
     // THEN
     Assertions.assertEquals(expected, actual);

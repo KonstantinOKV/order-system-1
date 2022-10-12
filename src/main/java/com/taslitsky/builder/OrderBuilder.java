@@ -9,7 +9,7 @@ public class OrderBuilder implements Builder {
 
   public OrderBuilder lunch(Lunch lunch) {
     order.setLunch(lunch);
-    Float dessertPrice = lunch.getDesertItem().getPrice();
+    Float dessertPrice = lunch.getDessertItem().getPrice();
     Float coursePrice = lunch.getCourseItem().getPrice();
     order.setPrice(order.getPrice() + dessertPrice + coursePrice);
     return this;

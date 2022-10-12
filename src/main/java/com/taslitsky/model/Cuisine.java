@@ -9,7 +9,6 @@ import java.util.Objects;
 public class Cuisine implements Item {
   private List<CourseItem> courses;
   private List<DessertItem> desserts;
-
   private final String name;
 
   public Cuisine(List<CourseItem> courses, List<DessertItem> desserts, String name) {

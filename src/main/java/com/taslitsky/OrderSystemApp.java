@@ -1,6 +1,5 @@
 package com.taslitsky;
 
-
 import com.taslitsky.service.OrderSystemService;
 
 public class OrderSystemApp {

@@ -7,11 +7,11 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class DrinkBuilderTest {
-  private DrinkBuilder drinkBuilder = new DrinkBuilder();
+  private DrinkBuilder underTest = new DrinkBuilder();
 
   @Test
   void drinkNotNullTest() {
-    Assertions.assertNotNull(drinkBuilder.build());
+    Assertions.assertNotNull(underTest.build());
   }
 
   @Test
@@ -21,7 +21,7 @@ class DrinkBuilderTest {
     expected.setDrinkItem(DrinkItem.PEPSI);
 
     // WHEN
-    Drink actual = drinkBuilder.drink(DrinkItem.PEPSI)
+    Drink actual = underTest.drink(DrinkItem.PEPSI)
         .build();
 
     // THEN
@@ -35,7 +35,7 @@ class DrinkBuilderTest {
     expected.getAdditionItems().add(DrinkAdditionItem.LEMON);
 
     // WHEN
-    Drink actual = drinkBuilder.additionItem(DrinkAdditionItem.LEMON)
+    Drink actual = underTest.additionItem(DrinkAdditionItem.LEMON)
         .build();
 
     // THEN
@@ -48,7 +48,7 @@ class DrinkBuilderTest {
     Drink expected = new Drink();
 
     // WHEN
-    Drink actual = drinkBuilder.build();
+    Drink actual = underTest.build();
 
     // THEN
     Assertions.assertEquals(expected, actual);

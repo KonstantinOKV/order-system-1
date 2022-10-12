@@ -19,10 +19,6 @@ public class Lunch  {
     this.courseItem = courseItem;
   }
 
-  public DessertItem getDesertItem() {
-    return dessertItem;
-  }
-
   public void setDessertItem(DessertItem desertItem) {
     this.dessertItem = desertItem;
   }

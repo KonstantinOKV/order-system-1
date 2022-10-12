@@ -6,7 +6,6 @@ public enum DrinkAdditionItem implements Item {
   LEMON,
   ICE_CUBES;
 
-
   @Override
   public String getName() {
     StringBuilder name = new StringBuilder(this.name().toLowerCase());
@@ -18,6 +17,4 @@ public enum DrinkAdditionItem implements Item {
     }
     return name.toString();
   }
-
-
 }

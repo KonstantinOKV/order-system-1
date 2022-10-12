@@ -1,7 +1,5 @@
 package com.taslitsky.builder;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import com.taslitsky.data.drink.DrinkItem;
 import com.taslitsky.data.lunch.italianlunch.ItalianCourseItem;
 import com.taslitsky.data.lunch.italianlunch.ItalianDessertItem;
@@ -10,15 +8,14 @@ import com.taslitsky.model.Lunch;
 import com.taslitsky.model.Order;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.mockito.internal.matchers.Or;
 
 class OrderBuilderTest {
 
-  private OrderBuilder orderBuilder = new OrderBuilder();
+  private OrderBuilder underTest = new OrderBuilder();
 
   @Test
   void orderNotNullTest() {
-    Assertions.assertNotNull(orderBuilder.build());
+    Assertions.assertNotNull(underTest.build());
   }
 
   @Test
@@ -34,7 +31,8 @@ class OrderBuilderTest {
     expected.setPrice(lunch.getPrice());
 
     // WHEN
-    Order actual = orderBuilder.lunch(lunch)
+    Order actual = underTest
+        .lunch(lunch)
         .build();
 
     // THEN
@@ -52,7 +50,8 @@ class OrderBuilderTest {
     expected.setPrice(drink.getDrinkItem().getPrice());
 
     // WHEN
-    Order actual = orderBuilder.drink(drink)
+    Order actual = underTest
+        .drink(drink)
         .build();
 
     // THEN
@@ -65,7 +64,7 @@ class OrderBuilderTest {
     Order expected = new Order();
 
     // WHEN
-    Order actual = orderBuilder.build();
+    Order actual = underTest.build();
 
     // THEN
     Assertions.assertEquals(expected, actual);

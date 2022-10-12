@@ -3,7 +3,6 @@ package com.taslitsky.builder;
 import com.taslitsky.model.Drink;
 import com.taslitsky.data.drink.DrinkAdditionItem;
 import com.taslitsky.data.drink.DrinkItem;
-import java.util.List;
 
 public class DrinkBuilder implements Builder {
   private final Drink drink = new Drink();
@@ -14,11 +13,9 @@ public class DrinkBuilder implements Builder {
   }
 
   public DrinkBuilder additionItem(DrinkAdditionItem additionalItem) {
-    List<DrinkAdditionItem> additionalItems = drink.getAdditionItems();
-    additionalItems.add(additionalItem);
+    drink.getAdditionItems().add(additionalItem);
     return this;
   }
-
 
   public Drink build() {
     return drink;
