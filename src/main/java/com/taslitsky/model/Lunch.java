@@ -38,7 +38,9 @@ public class Lunch  {
   @Override
   public String toString() {
     StringBuilder stringBuilder = new StringBuilder();
-    stringBuilder.append(courseItem.getName()).append(", ").append(dessertItem.getName()).append(". ");
+    stringBuilder.append(courseItem.getName())
+        .append(", ").append(dessertItem.getName())
+        .append(". ");
     return stringBuilder.toString();
   }
 

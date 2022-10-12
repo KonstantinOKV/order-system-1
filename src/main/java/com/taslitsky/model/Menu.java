@@ -11,6 +11,9 @@ public class Menu  {
   private List<DrinkItem> drinks;
   private List<DrinkAdditionItem> drinkAddition;
 
+  /**
+   * setting menu fields.
+   */
   public Menu() {
     cuisines = new ArrayList<>();
     drinks = new ArrayList<>();
@@ -29,9 +32,8 @@ public class Menu  {
     this.drinks = drinks;
   }
 
-  public void setDrinkAddition(
-      List<DrinkAdditionItem> drinkAdditionItems) {
-      drinkAddition = drinkAdditionItems;
+  public void setDrinkAddition(List<DrinkAdditionItem> drinkAdditionItems) {
+    drinkAddition = drinkAdditionItems;
   }
 
   public List<DrinkItem> getDrinks() {

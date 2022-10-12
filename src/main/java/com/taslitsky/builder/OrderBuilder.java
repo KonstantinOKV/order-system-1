@@ -7,6 +7,10 @@ import com.taslitsky.model.Order;
 public class OrderBuilder implements Builder {
   private final Order order = new Order();
 
+  /**
+   * @param lunch - lunch model.
+   * @return orderBuilder instance.
+   */
   public OrderBuilder lunch(Lunch lunch) {
     order.setLunch(lunch);
     Float dessertPrice = lunch.getDessertItem().getPrice();
@@ -15,6 +19,10 @@ public class OrderBuilder implements Builder {
     return this;
   }
 
+  /**
+   * @param drink - drink model.
+   * @return orderBuilder instance.
+   */
   public OrderBuilder drink(Drink drink) {
     order.setDrink(drink);
     Float drinkPrice = drink.getDrinkItem().getPrice();
@@ -22,6 +30,9 @@ public class OrderBuilder implements Builder {
     return this;
   }
 
+  /**
+   * @return built order.
+   */
   public Order build() {
     return order;
   }

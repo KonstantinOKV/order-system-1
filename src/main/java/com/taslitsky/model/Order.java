@@ -34,10 +34,10 @@ public class Order {
   @Override
   public String toString() {
     StringBuilder stringBuilder = new StringBuilder();
-    if(lunch != null) {
+    if (lunch != null) {
       stringBuilder.append(lunch);
     }
-    if(drink != null) {
+    if (drink != null) {
       stringBuilder.append(drink);
     }
     stringBuilder.append(". Price: ").append(price);

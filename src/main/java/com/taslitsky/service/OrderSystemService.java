@@ -4,16 +4,16 @@ import com.taslitsky.data.drink.DrinkItem;
 import com.taslitsky.item.CourseItem;
 import com.taslitsky.item.DessertItem;
 import com.taslitsky.model.Menu;
-import com.taslitsky.repository.OrderRepo;
 import com.taslitsky.repository.CuisineRepo;
+import com.taslitsky.repository.OrderRepo;
 import com.taslitsky.repository.drinkrepository.DrinkAdditionRepo;
 import com.taslitsky.repository.drinkrepository.DrinkRepo;
-import com.taslitsky.view.View;
-import com.taslitsky.model.Cuisine;
 import com.taslitsky.builder.DrinkBuilder;
-import com.taslitsky.model.Lunch;
 import com.taslitsky.builder.LunchBuilder;
 import com.taslitsky.builder.OrderBuilder;
+import com.taslitsky.model.Cuisine;
+import com.taslitsky.model.Lunch;
+import com.taslitsky.view.View;
 import java.util.List;
 
 
@@ -68,7 +68,8 @@ public class OrderSystemService {
       orderBuilder = orderBuilder.lunch(lunch);
     }
 
-    if (!wantEat || view.askFor("drink")) { // use !wantEat first for not asking customer for a drink if he declined food
+    // use !wantEat first for not asking customer for a drink if he declined food
+    if (!wantEat || view.askFor("drink")) {
       List<DrinkItem> drinks = menu.getDrinks();
       int drinkIndex = getDrinkIndex();
 
@@ -77,21 +78,24 @@ public class OrderSystemService {
 
       // ask user for addition items
       while (view.wantAdditionItems()) {
-        int additionItemIndex = view.selectItem(menu.getDrinkAddition().size(), "drink addition") - 1;
+        int additionItemIndex = view.selectItem(menu.getDrinkAddition().size(),
+            "drink addition") - 1;
 
         // continue if user selected already selected addition
-        if(drinkBuilder.build().getAdditionItems().contains(menu.getDrinkAddition().get(additionItemIndex))) {
+        if (drinkBuilder.build().getAdditionItems()
+            .contains(menu.getDrinkAddition().get(additionItemIndex))) {
           view.additionItemAlreadySelected();
           continue;
         }
 
         drinkBuilder.additionItem(menu.getDrinkAddition().get(additionItemIndex));
 
-        //break if customer selected all addition items for drink
+        // break if customer selected all addition items for drink
         if (drinkBuilder.build().getAdditionItems().equals(menu.getDrinkAddition())) {
           break;
         }
       }
+
       // add drink to order
      orderBuilder = orderBuilder.drink(drinkBuilder.build());
     }
@@ -107,11 +111,13 @@ public class OrderSystemService {
   }
 
   private int getCourseIndex(int selectedItemId) {
-    return view.selectItem(menu.getCuisines().get(selectedItemId).getCourses().size(), "course") - 1;
+    return view.selectItem(menu.getCuisines()
+        .get(selectedItemId).getCourses().size(), "course") - 1;
   }
 
   private int getDessertIndex(int selectedItemId) {
-    return view.selectItem(menu.getCuisines().get(selectedItemId).getDesserts().size(), "dessert") - 1;
+    return view.selectItem(menu.getCuisines()
+        .get(selectedItemId).getDesserts().size(), "dessert") - 1;
   }
 
   private int getDrinkIndex() {

@@ -32,8 +32,11 @@ class OrderSystemServiceTest {
   @BeforeEach
   void setUp() {
     autoCloseable = MockitoAnnotations.openMocks(this);
-    Mockito.doReturn(Stream.of(DrinkItem.values()).collect(Collectors.toList())).when(menu).getDrinks();
-    Mockito.doReturn(1).when(view).selectItem(Mockito.anyInt(), Mockito.anyString());
+    Mockito.doReturn(Stream.of(DrinkItem.values())
+        .collect(Collectors.toList()))
+        .when(menu).getDrinks();
+    Mockito.doReturn(1)
+        .when(view).selectItem(Mockito.anyInt(), Mockito.anyString());
   }
 
   @AfterEach

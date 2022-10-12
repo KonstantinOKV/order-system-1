@@ -1,6 +1,5 @@
 package com.taslitsky.model;
 
-
 import com.taslitsky.data.drink.DrinkAdditionItem;
 import com.taslitsky.data.drink.DrinkItem;
 import com.taslitsky.item.Item;
@@ -27,13 +26,12 @@ public class Drink {
   public String toString() {
     StringBuilder drinkStringBuilder  =  new StringBuilder(drinkItem.getName());
 
-    if(!additionItems.isEmpty()) {
+    if (!additionItems.isEmpty()) {
       drinkStringBuilder.append(" with ");
-      for (Item additionItem:
-      additionItems) {
+      for (Item additionItem: additionItems) {
         drinkStringBuilder.append(additionItem.getName()).append(", ");
       }
-      drinkStringBuilder.setLength(drinkStringBuilder.length()-2);
+      drinkStringBuilder.setLength(drinkStringBuilder.length() - 2);
     }
     return drinkStringBuilder.toString();
   }

@@ -18,7 +18,7 @@ public enum ItalianCourseItem implements CourseItem {
     StringBuilder name = new StringBuilder(this.name().toLowerCase());
     name.setCharAt(0, Character.toUpperCase(name.charAt(0)));
     for (int i = 0; i < name.length(); i++) {
-      if(name.charAt(i) == '_') {
+      if (name.charAt(i) == '_') {
         name.setCharAt(i, ' ');
       }
     }

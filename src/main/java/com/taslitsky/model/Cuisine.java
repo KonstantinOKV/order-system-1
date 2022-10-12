@@ -11,6 +11,12 @@ public class Cuisine implements Item {
   private List<DessertItem> desserts;
   private final String name;
 
+  /**
+   *
+   * @param courses - typeList of courses
+   * @param desserts - typeList of desserts
+   * @param name - cuisine name
+   */
   public Cuisine(List<CourseItem> courses, List<DessertItem> desserts, String name) {
     this.courses = courses;
     this.desserts = desserts;

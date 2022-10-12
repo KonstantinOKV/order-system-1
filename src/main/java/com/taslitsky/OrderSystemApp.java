@@ -8,6 +8,9 @@ public class OrderSystemApp {
     app.start();
   }
 
+  /**
+   * app start method.
+   */
   public void start() {
     OrderSystemService orderSystemService = new OrderSystemService();
     do {

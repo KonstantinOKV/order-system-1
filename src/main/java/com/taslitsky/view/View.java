@@ -1,9 +1,9 @@
 package com.taslitsky.view;
 
-import com.taslitsky.model.Menu;
 import com.taslitsky.model.Cuisine;
 import com.taslitsky.item.Item;
 import com.taslitsky.item.PaidItem;
+import com.taslitsky.model.Menu;
 import com.taslitsky.model.Order;
 import java.util.List;
 import java.util.Scanner;
@@ -11,6 +11,9 @@ import java.util.Scanner;
 public class View {
   private Scanner scanner = new Scanner(System.in);
 
+  /**
+   * @param menu - menu model.
+   */
   public void showMenu(Menu menu) {
     System.out.println("Menu:");
     showCuisine(menu.getCuisines());
@@ -54,12 +57,15 @@ public class View {
   public boolean askFor(String desireDescription) {
     String answer;
     do {
-      System.out.print("Do you want "+ desireDescription + " ?(Y/N): ");
+      System.out.print("Do you want " + desireDescription + " ?(Y/N): ");
       answer = scanner.next();
     } while (!(answer.equals("Y") || answer.equals("N")));
     return answer.equals("Y");
   }
 
+  /**
+   * @return id of desired item.
+   */
   public boolean wantAdditionItems() {
     String answer;
     do {

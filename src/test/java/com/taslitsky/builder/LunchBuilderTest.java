@@ -1,6 +1,5 @@
 package com.taslitsky.builder;
 
-
 import com.taslitsky.model.Lunch;
 import com.taslitsky.data.lunch.italianlunch.ItalianCourseItem;
 import com.taslitsky.data.lunch.italianlunch.ItalianDessertItem;
@@ -11,7 +10,7 @@ class LunchBuilderTest {
   private LunchBuilder underTest = new LunchBuilder();
 
   @Test
-  void LunchNotNullTest() {
+  void lunchNotNullTest() {
     Assertions.assertNotNull(underTest.build());
   }
 

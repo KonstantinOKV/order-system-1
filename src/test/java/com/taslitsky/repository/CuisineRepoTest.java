@@ -16,18 +16,25 @@ import org.junit.jupiter.api.Test;
 
 class CuisineRepoTest {
   private CuisineRepo underTest = new CuisineRepo();
+
   @Test
   void findAllTest() {
     // GIVEN
     List<Cuisine> expected = new ArrayList<>();
-    expected.add(new Cuisine(Stream.of(ItalianCourseItem.values()).collect(Collectors.toList()), // italian courses
-        Stream.of(ItalianDessertItem.values()).collect(Collectors.toList()), // italian dessert
+    expected.add(new Cuisine(Stream.of(ItalianCourseItem.values())
+        .collect(Collectors.toList()), // italian courses
+        Stream.of(ItalianDessertItem.values())
+            .collect(Collectors.toList()), // italian dessert
         "Italian cuisine"));
-    expected.add(new Cuisine(Stream.of(MexicanCourseItem.values()).collect(Collectors.toList()), // mexican courses
-        Stream.of(MexicanDessertItem.values()).collect(Collectors.toList()), // mexican desserts
+    expected.add(new Cuisine(Stream.of(MexicanCourseItem.values())
+        .collect(Collectors.toList()), // mexican courses
+        Stream.of(MexicanDessertItem.values())
+            .collect(Collectors.toList()), // mexican desserts
         "Mexican cuisine"));
-    expected.add(new Cuisine(Stream.of(PolishCourseItem.values()).collect(Collectors.toList()), // polish courses
-        Stream.of(PolishDessertItem.values()).collect(Collectors.toList()), // polish desserts
+    expected.add(new Cuisine(Stream.of(PolishCourseItem.values())
+        .collect(Collectors.toList()), // polish courses
+        Stream.of(PolishDessertItem.values())
+            .collect(Collectors.toList()), // polish desserts
         "Polish cuisine"));
 
     // WHEN
